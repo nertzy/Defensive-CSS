@@ -73,6 +73,19 @@ a {
         border: 1px solid #ccc;
         padding: ($line-height / 2 - 1px) ($column-padding - 1px);
       }
+      > header {
+        background: #cff;
+        padding: 0 $column-padding;
+        h1 {
+          font-size: 24px;
+          line-height: 2 * $line-height;
+          padding: ($line-height / 2) 0;
+        }
+        h2 {
+          font-size: 18px;
+          line-height: 2 * $line-height;
+        }
+      }
       > aside {
         @include column(6);
         @include float-right;
