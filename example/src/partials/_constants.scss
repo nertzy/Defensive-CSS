@@ -12,3 +12,9 @@ $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $b
 $column-padding: 8px;
 
 $line-height: 18px;
+
+$article-width: 20 * ($blueprint-grid-width + $blueprint-grid-margin) - $blueprint-grid-margin;
+
+$textarea-border-width: 1px;
+$textarea-horizontal-padding: $column-padding - $textarea-border-width;
+$textarea-vertical-padding: ($line-height / 2) - $textarea-border-width;

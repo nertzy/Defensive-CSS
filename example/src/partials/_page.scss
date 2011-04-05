@@ -89,6 +89,12 @@ a {
         border: 1px solid #ccc;
         padding: ($line-height / 2 - 1px) ($column-padding - 1px);
       }
+      > textarea {
+        font: inherit;
+        padding: $textarea-vertical-padding $textarea-horizontal-padding;
+        border: $textarea-border-width solid #ccc;
+        width: $article-width - 2 * ($textarea-horizontal-padding + $textarea-border-width);
+      }
       > header {
         background: #cff;
         padding: 0 $column-padding;
