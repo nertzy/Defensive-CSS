@@ -9,37 +9,96 @@ a {
   color: #88c;
 }
 
-#container {
-  @include container;
-  min-height: 400px;
-
+#wrapper {
+  background: white url("../images/background-gradient.png") center top repeat-y;
   > header {
-    @include column(24, true);
+    margin: 0 auto;
+    width: 971px;
+    background: #ccf;
     border-bottom: 1px solid #ccc;
-    padding: 0 $column-padding - 1px;
     height: 3 * $line-height - 1;
     h1 {
+      @include span(24);
+      margin: 0 auto;
+      padding: ($line-height / 3) ($column-padding) (2 * $line-height / 3);
       font-size: 2 * $line-height;
       line-height: 2 * $line-height;
     }
   }
 
-  > nav {
-    @include column(6);
-    ul {
-      li {
-        display: block;
-        padding: 0.333 * $line-height $column-padding 0.667 * $line-height;
+  #container {
+    @include container;
+    min-height: 400px;
+
+    background: transparent url("../images/horizontal-gradient.png") (($blueprint-grid-width + $blueprint-grid-margin) * 4 - $blueprint-grid-margin - 10px) top repeat-y;
+    &.showgrid {
+      @include showgrid;
+    }
+
+    > nav {
+      @include column(4);
+      margin-top: $line-height / 2;
+      ul {
+        li {
+          list-style: none;
+          a {
+            text-decoration: none;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            display: block;
+            padding: ($line-height / 3) $column-padding (2 * $line-height / 3 - 1px) 9px + $column-padding;
+          }
+          &.current {
+            background: white;
+          }
+          & + li {
+            margin-top: ($line-height / 2) - 2px;
+          }
+        }
+      }
+    }
+
+    > article {
+      @include column(20, true);
+      padding-top: $line-height;
+      > * {
+        margin-bottom: $line-height;
+      }
+      > p {
+        padding: 0 $column-padding;
+      }
+      > section.box {
+        clear: both;
+        border: 1px solid #ccc;
+        padding: ($line-height / 2 - 1px) ($column-padding - 1px);
+      }
+      > aside {
+        @include column(6);
+        @include float-right;
+        margin: 0 0 $line-height $blueprint-grid-margin;
+        figure {
+          margin: 0;
+          border: 1px solid #ccc;
+          img {
+            display: block;
+            margin: 0 auto;
+            padding: $line-height - 1px 0;
+          }
+        }
       }
     }
   }
 
-  > article {
-    @include column(18, true);
+  > footer {
+    margin: 0 auto;
+    width: 971px;
+    background: #cfc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    height: 3 * $line-height - 1;
     > * {
-      // WIP
+      padding: (2 * $line-height / 3) ($column-padding) (4 * $line-height / 3);
     }
   }
-
 }
-
