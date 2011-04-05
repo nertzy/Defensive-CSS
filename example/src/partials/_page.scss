@@ -37,7 +37,7 @@ a {
 
     > nav {
       @include column(4);
-      margin-top: $line-height / 2;
+      margin-top: $line-height / 2 - 1px;
       ul {
         li {
           list-style: none;
@@ -47,13 +47,13 @@ a {
             border-bottom: 1px solid #ccc;
             border-left: 1px solid #ccc;
             display: block;
-            padding: ($line-height / 3) $column-padding (2 * $line-height / 3 - 1px) 9px + $column-padding;
+            padding: ($line-height / 2 - 1px) $column-padding ($line-height / 2) 9px + $column-padding;
           }
           &.current {
             background: white;
           }
           & + li {
-            margin-top: ($line-height / 2) - 2px;
+            margin-top: ($line-height / 2 - 1px);
           }
         }
       }
