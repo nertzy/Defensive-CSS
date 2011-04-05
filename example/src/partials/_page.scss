@@ -68,6 +68,22 @@ a {
       > p {
         padding: 0 $column-padding;
       }
+      > ul {
+        padding: 0 $column-padding 0 $column-padding + 20px;
+        list-style: bullet;
+        li {
+          margin-bottom: $line-height;
+          a {
+            border: none;
+            padding: 4px;
+          }
+          a:hover {
+            border: 1px solid #ccf;
+            background: #eef;
+            padding: 3px;
+          }
+        }
+      }
       > section.box {
         clear: both;
         border: 1px solid #ccc;
